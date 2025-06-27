@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Elite Enterprises</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#f7941d',
+secondary: '#2A3342'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+},
+fontFamily: {
+'inter': ['Inter', 'sans-serif']
+}
+}
+}
+}
+</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+html {
+scroll-behavior: smooth;
+}
+body {
+font-family: 'Inter', sans-serif;
+}
+.timeline-item:nth-child(even) {
+flex-direction: row-reverse;
+}
+.timeline-item:nth-child(odd) .timeline-content {
+text-align: right;
+}
+.timeline-item:nth-child(even) .timeline-content {
+text-align: left;
+}
+.timeline-item:nth-child(odd) .timeline-dot {
+left: calc(100% - 12px);
+}
+.timeline-item:nth-child(even) .timeline-dot {
+left: -12px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.fade-in {
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in.visible {
+opacity: 1;
+transform: translateY(0);
+}
+.slide-in-left {
+opacity: 0;
+transform: translateX(-50px);
+transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.slide-in-right {
+opacity: 0;
+transform: translateX(50px);
+transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.slide-in-left.visible, .slide-in-right.visible {
+opacity: 1;
+transform: translateX(0);
+}
+</style>
+</head>
+<body class="bg-white text-gray-800">
+   <script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const imageElement = document.getElementById("myImage");
+    const url = localStorage.getItem("myImage");
+
+    if (imageElement && url) {
+      imageElement.src = url;
+    }
+  });
+</script>
+
+<!-- Header/Navigation -->
+<header class="fixed w-full z-50" style="background: linear-gradient(to bottom, #f8f9fa, #f1f3f5); border-radius: 0 0 16px 16px;">
+<div class="container mx-auto px-6 py-3 flex items-center justify-between">
+<a href="#" class="flex-shrink-0">
+<img id="myImage" src="" alt="Elite Enterprise Logo" class="h-[60px]">
+</a>
+<nav class="hidden lg:flex items-center justify-center flex-1 px-8">
+<div class="flex space-x-8">
+<a href="" class="font-bold text-gray-800 hover:text-primary transition-colors">Home</a>
+<a href="./aboutus.html" class="font-bold text-primary transition-colors">About Us</a>
+<a href="./gallery.html" class="font-bold text-gray-800 hover:text-primary transition-colors">Gallery</a>
+<!-- <a href="./" class="font-bold text-gray-800 hover:text-primary transition-colors">Services</a> -->
+<a href="./careers.html" class="font-bold text-gray-800 hover:text-primary transition-colors">Careers</a>
+<a href="./contactus.html" class="font-bold text-gray-800 hover:text-primary transition-colors">Contact Us</a>
+</div>
+</nav>
+<div class="hidden lg:flex items-center space-x-4">
+<button class="border-2 border-primary bg-transparent text-primary px-6 py-2 font-bold !rounded-button whitespace-nowrap hover:bg-primary hover:text-white transition-colors">Get Started</button>
+<button class="bg-primary text-white px-6 py-2 font-bold !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">Contact Us</button>
+</div>
+<button class="lg:hidden w-10 h-10 flex items-center justify-center">
+<i class="ri-menu-line text-2xl text-gray-800"></i>
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative pt-24 md:pt-0">
+<div class="w-full h-[500px] md:h-[600px] relative overflow-hidden">
+<div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+<div style="background-image: url('https://readdy.ai/api/search-image?query=professional%20engineers%20and%20architects%20at%20a%20construction%20site%2C%20modern%20building%20under%20construction%2C%20team%20of%20professionals%20in%20hard%20hats%20examining%20blueprints%2C%20high%20quality%20professional%20photo%2C%20natural%20lighting%2C%20realistic%2C%20detailed&width=1920&height=1080&seq=1&orientation=landscape'); background-size: cover; background-position: center;" class="absolute inset-0 scale-105 animate-[zoom-out_8s_ease-out_forwards]"></div>
+<div class="container mx-auto px-4 h-full flex flex-col justify-center items-center relative z-20">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-4 max-w-4xl">Building a Stronger Tomorrow</h1>
+<h2 class="text-xl md:text-2xl text-white text-center max-w-3xl">With 10+ years of trusted engineering, architecture, and geotech excellence</h2>
+<button class="mt-8 bg-primary text-white px-8 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition">Discover Our Services</button>
+</div>
+</div>
+</section>
+<!-- Company Introduction -->
+<section class="py-16 md:py-24">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="w-full md:w-3/5 fade-in">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">Excellence in Engineering & Construction</h2>
+<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+Elite Enterprises is a premier group of specialized verticals delivering comprehensive solutions across the engineering and construction spectrum. Our integrated approach combines expertise from three distinct yet complementary divisions:
+</p>
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4 mt-1">
+<i class="ri-building-line text-primary"></i>
+</div>
+<div>
+<h3 class="font-semibold text-lg text-primary">Elite Structural Consultants</h3>
+<p class="text-gray-700">Providing innovative structural engineering solutions with precision and excellence.</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4 mt-1">
+<i class="ri-draft-line text-primary"></i>
+</div>
+<div>
+<h3 class="font-semibold text-lg text-primary">Elite Structcon Studio</h3>
+<p class="text-gray-700">Architectural design and planning services that blend aesthetics with functionality.</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4 mt-1">
+<i class="ri-test-tube-line text-primary"></i>
+</div>
+<div>
+<h3 class="font-semibold text-lg text-primary">Elite NDT & Geotech</h3>
+<p class="text-gray-700">Advanced testing and geotechnical services ensuring structural integrity and safety.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="w-full md:w-2/5 fade-in">
+<div class="rounded-lg overflow-hidden shadow-xl">
+<img src="https://readdy.ai/api/search-image?query=professional%20team%20of%20engineers%20and%20architects%20in%20a%20meeting%2C%20discussing%20blueprints%20on%20a%20table%2C%20modern%20office%20environment%2C%20collaborative%20workspace%2C%20natural%20lighting%2C%20high%20quality%20professional%20photo%2C%20realistic&width=600&height=700&seq=2&orientation=portrait" alt="Elite Enterprises Team" class="w-full h-auto object-cover">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Pillars Section -->
+<section class="py-16 md:py-24 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16 fade-in">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Our Core Pillars</h2>
+<p class="text-lg text-gray-700 max-w-3xl mx-auto">The foundations that guide our approach to every project and relationship</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:shadow-xl fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mx-auto mb-6">
+<i class="ri-eye-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-center mb-4">Vision</h3>
+<p class="text-gray-700 text-center">To be the industry leader in innovative structural solutions that shape resilient communities worldwide.</p>
+</div>
+<div class="bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:shadow-xl fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mx-auto mb-6">
+<i class="ri-flag-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-center mb-4">Mission</h3>
+<p class="text-gray-700 text-center">Delivering engineering excellence through innovation, integrity, and sustainable practices that exceed client expectations.</p>
+</div>
+<div class="bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:shadow-xl fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mx-auto mb-6">
+<i class="ri-heart-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-center mb-4">Core Values</h3>
+<p class="text-gray-700 text-center">Excellence, integrity, innovation, collaboration, and sustainability guide every decision we make.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Timeline Journey -->
+<section class="py-16 md:py-24">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16 fade-in">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Our Journey</h2>
+<p class="text-lg text-gray-700 max-w-3xl mx-auto">A decade of growth, innovation, and excellence in engineering</p>
+</div>
+<div class="relative">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 fade-in">
+<div class="flex flex-col items-center">
+<h3 class="text-3xl font-bold text-primary mb-4">2012</h3>
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-building-line text-2xl text-primary"></i>
+</div>
+<p class="text-gray-700 text-center">Founded Elite Structural Consultants with a team of 5 engineers, completing our first major commercial project.</p>
+</div>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 fade-in">
+<div class="flex flex-col items-center">
+<h3 class="text-3xl font-bold text-primary mb-4">2015</h3>
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-ruler-line text-2xl text-primary"></i>
+</div>
+<p class="text-gray-700 text-center">Expanded to 25 team members and launched Elite Structcon Studio, celebrating our 50th successful project.</p>
+</div>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 fade-in">
+<div class="flex flex-col items-center">
+<h3 class="text-3xl font-bold text-primary mb-4">2019</h3>
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-test-tube-line text-2xl text-primary"></i>
+</div>
+<p class="text-gray-700 text-center">Established Elite NDT & Geotech division, introducing cutting-edge non-destructive testing capabilities.</p>
+</div>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 fade-in">
+<div class="flex flex-col items-center">
+<h3 class="text-3xl font-bold text-primary mb-4">2024</h3>
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-award-line text-2xl text-primary"></i>
+</div>
+<p class="text-gray-700 text-center">Achieved ISO certification across all divisions, completing our 200th project and expanding internationally.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Section -->
+<section class="py-16 md:py-24 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="w-full md:w-2/5 slide-in-left">
+<div class="rounded-full overflow-hidden border-4 border-primary w-64 h-64 mx-auto md:mx-0">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20confident%20Indian%20male%20executive%20in%20his%2040s%2C%20wearing%20a%20business%20suit%2C%20professional%20lighting%2C%20neutral%20background%2C%20high%20quality%20portrait%2C%20realistic&width=500&height=500&seq=3&orientation=squarish" alt="Ajinkya Sir" class="w-full h-full object-cover">
+</div>
+</div>
+<div class="w-full md:w-3/5 slide-in-right">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">Led by Visionary Expertise</h2>
+<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+Under the leadership of Ajinkya Patil, Elite Enterprises has grown from a small consulting firm to a comprehensive engineering powerhouse. With over 15 years of industry experience and a background in structural engineering from IIT Mumbai, Ajinkya brings unparalleled technical expertise and business acumen to every project.
+</p>
+<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+His vision of integrating traditional engineering excellence with cutting-edge technology has positioned Elite as an industry leader. Ajinkya's commitment to quality, sustainability, and client satisfaction remains the cornerstone of our company culture.
+</p>
+<div class="flex items-center space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white">
+<i class="ri-mail-line"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonial Banner -->
+<section class="py-12 md:py-16 bg-primary">
+<div class="container mx-auto px-4 text-center">
+<h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Trusted by Industry Leaders</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+<div class="bg-white bg-opacity-10 p-6 rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-3">
+<i class="ri-building-4-line text-3xl text-white"></i>
+</div>
+<p class="text-white font-medium">Horizon Developers</p>
+</div>
+<div class="bg-white bg-opacity-10 p-6 rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-3">
+<i class="ri-building-2-line text-3xl text-white"></i>
+</div>
+<p class="text-white font-medium">Pinnacle Construction</p>
+</div>
+<div class="bg-white bg-opacity-10 p-6 rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-3">
+<i class="ri-government-line text-3xl text-white"></i>
+</div>
+<p class="text-white font-medium">Metro Infrastructure</p>
+</div>
+<div class="bg-white bg-opacity-10 p-6 rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-3">
+<i class="ri-home-4-line text-3xl text-white"></i>
+</div>
+<p class="text-white font-medium">Skyline Properties</p>
+</div>
+</div>
+<div class="mt-12">
+<p class="text-xl md:text-2xl text-white italic">"Elite ensures structural excellence, always."</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+<a href="#"><img src="https://static.readdy.ai/image/a63ec0b6f34fb9b66d50256c348ce6a2/14473f2f2ab90e80defb244166b75318.png" alt="Elite Enterprise Logo" class="h-10 mb-4"></a>
+<p class="text-gray-400 mb-4">Building excellence through innovation and integrity since 2012.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition">
+<i class="ri-instagram-line"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-primary transition">Home</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition">Services</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition">Gallery</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition">Careers</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Services</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-primary transition">Structural Engineering</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition">Architectural Design</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition">Non-Destructive Testing</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition">Geotechnical Services</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition">Project Management</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+<ul class="space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-2 mt-1">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<span class="text-gray-400">123 Engineering Way, Mumbai, Maharashtra 400001</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-2 mt-1">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<span class="text-gray-400">+91 98765 43210</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-2 mt-1">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<span class="text-gray-400">info@eliteenterprises.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+<p>© 2025 Elite Enterprises. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script id="animation-script">
+document.addEventListener('DOMContentLoaded', function() {
+const fadeElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+observer.unobserve(entry.target);
+}
+});
+}, {
+threshold: 0.1
+});
+fadeElements.forEach(element => {
+observer.observe(element);
+});
+});
+</script>
+</body>
+</html>

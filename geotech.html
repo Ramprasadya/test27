@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elite NDT & Geotech Engineering</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#f7941d", secondary: "#1f2937" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      .counter-value {
+        transition: all 0.3s ease;
+      }
+      .service-card {
+        transition: transform 0.3s ease;
+      }
+      .service-card:hover {
+        transform: scale(1.03);
+      }
+      .custom-checkbox {
+        position: relative;
+        cursor: pointer;
+      }
+      .custom-checkbox input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #fff;
+        border: 2px solid #e5e7eb;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+      }
+      .custom-checkbox input:checked ~ .checkmark {
+        background-color: #f7941d;
+        border-color: #f7941d;
+      }
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+      .custom-checkbox input:checked ~ .checkmark:after {
+        display: block;
+      }
+      .custom-checkbox .checkmark:after {
+        left: 6px;
+        top: 2px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+      .custom-switch {
+        position: relative;
+        display: inline-block;
+        width: 48px;
+        height: 24px;
+      }
+      .custom-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .switch-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #e5e7eb;
+        transition: 0.4s;
+        border-radius: 24px;
+      }
+      .switch-slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+      input:checked + .switch-slider {
+        background-color: #f7941d;
+      }
+      input:checked + .switch-slider:before {
+        transform: translateX(24px);
+      }
+      .hero-section {
+        position: relative;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+          ),
+          linear-gradient(rgba(247, 148, 29, 0.3), rgba(247, 148, 29, 0.3)),
+          url("https://readdy.ai/api/search-image?query=professional%20construction%20site%20with%20soil%20testing%20equipment%2C%20geotechnical%20engineers%20working%20at%20a%20construction%20site%2C%20modern%20equipment%20for%20soil%20testing%2C%20high%20quality%20professional%20photography%2C%20realistic%2C%20detailed%2C%20civil%20engineering&width=1920&height=1080&seq=1&orientation=landscape");
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-gray-50">
+    <script>
+    // let url = "https://static.readdy.ai/image/a63ec0b6f34fb9b66d50256c348ce6a2/13f0f75311357b249adf708678e6243f.png"
+    let url = "https://www.reservoir-media.com/wp-content/uploads/2020/08/DIVINE_30364-2-scaled.jpg"
+    window.addEventListener("DOMContentLoaded",()=>{
+        document.getElementById("myImage").src = url
+        localStorage.setItem("myImage",url)
+    })
+
+    </script>
+    <!-- Header/Navigation -->
+    <header
+      class="fixed top-0 left-0 right-0 bg-gradient-to-b from-gray-100 to-white bg-opacity-70 backdrop-blur-md z-50 rounded-b-xl shadow-lg"
+    >
+      <div
+        class="container mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <!-- Logo -->
+        <a href="#" class="flex items-center">
+          <img
+            id="myImage"
+            src=""
+            alt="Elite Geotech & NDT Logo"
+            class="h-[60px] w-auto"
+          />
+        </a>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center justify-center flex-1 px-8">
+          <div class="flex items-center space-x-10">
+            <a
+              href="./geotech.html"
+              class="text-gray-800 hover:text-primary font-bold transition-colors text-sm uppercase tracking-wide"
+              >Home</a
+            >
+            <a
+              href="./aboutus.html"
+              class="text-gray-800 hover:text-primary font-bold transition-colors text-sm uppercase tracking-wide"
+              >About Us</a
+            >
+            <a
+              href="./gallery.html"
+              class="text-gray-800 hover:text-primary font-bold transition-colors text-sm uppercase tracking-wide"
+              >Gallery</a
+            >
+            <!-- <a
+              href="./s"
+              class="text-gray-800 hover:text-primary font-bold transition-colors text-sm uppercase tracking-wide"
+              >Services</a
+            > -->
+            <a
+              href="./careers.html"
+              class="text-gray-800 hover:text-primary font-bold transition-colors text-sm uppercase tracking-wide"
+              >Careers</a
+            >
+            <a
+              href="./contactus.html"
+              class="text-gray-800 hover:text-primary font-bold transition-colors text-sm uppercase tracking-wide"
+              >Contact Us</a
+            >
+          </div>
+        </nav>
+        <!-- CTA Buttons -->
+        <div class="hidden md:flex items-center space-x-4">
+          <a
+            href="#"
+            class="px-6 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 !rounded-button whitespace-nowrap font-bold text-sm"
+            >Get Started</a
+          >
+          <a
+            href="#"
+            class="px-6 py-3 bg-primary text-white hover:bg-primary/90 transition-all duration-300 !rounded-button whitespace-nowrap font-bold text-sm"
+            >Contact Us</a
+          >
+        </div>
+        <!-- Mobile Menu Button -->
+        <button
+          class="md:hidden w-12 h-12 flex items-center justify-center text-gray-800"
+          id="mobile-menu-button"
+        >
+          <i class="ri-menu-line ri-2x"></i>
+        </button>
+      </div>
+      <!-- Mobile Navigation -->
+      <div
+        class="md:hidden hidden bg-gradient-to-b from-gray-100 to-white bg-opacity-70 backdrop-blur-md shadow-lg absolute w-full"
+        id="mobile-menu"
+      >
+        <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+          <a
+            href="./geotech.html"
+            class="text-gray-800 font-bold py-3 border-b border-gray-200 uppercase text-sm tracking-wide"
+            >Home</a
+          >
+          <a
+            href="./aboutus.html"
+            class="text-gray-800 font-bold py-3 border-b border-gray-200 uppercase text-sm tracking-wide"
+            >About Us</a
+          >
+          <a
+            href="./gallery.html"
+            class="text-gray-800 font-bold py-3 border-b border-gray-200 uppercase text-sm tracking-wide"
+            >Gallery</a
+          >
+          <!-- <a
+            href="#"
+            class="text-gray-800 font-bold py-3 border-b border-gray-200 uppercase text-sm tracking-wide"
+            >Services</a
+          > -->
+          <a
+            href="./careers.html"
+            class="text-gray-800 font-bold py-3 border-b border-gray-200 uppercase text-sm tracking-wide"
+            >Careers</a
+          >
+          <a
+            href="./contactus.html"
+            class="text-gray-800 font-bold py-3 border-b border-gray-200 uppercase text-sm tracking-wide"
+            >Contact Us</a
+          >
+          <div class="flex flex-col space-y-3 pt-4">
+            <a
+              href="#"
+              class="px-6 py-3 border-2 border-primary text-primary text-center !rounded-button whitespace-nowrap font-bold text-sm"
+              >Get Started</a
+            >
+            <a
+              href="./contactus.html"
+              class="px-6 py-3 bg-primary text-white text-center !rounded-button whitespace-nowrap font-bold text-sm"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section
+      class="hero-section min-h-[800px] flex items-center justify-center mt-16 relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-black/50 to-black/20"
+      ></div>
+      <div
+        class="container mx-auto px-4 py-32 text-center w-full max-w-6xl relative"
+      >
+        <div class="space-y-8">
+          <span
+            class="inline-flex items-center px-6 py-2.5 bg-white/10 text-white backdrop-blur-md rounded-full text-sm font-bold mb-8 border border-white/20 shadow-2xl"
+          >
+            <span
+              class="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"
+            ></span>
+            Leading NDT & Geotechnical Solutions
+          </span>
+          <h1
+            class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-12 leading-[1.8] md:leading-[2] tracking-tight drop-shadow-2xl"
+          >
+            Engineering From <br class="hidden md:block" />
+            the Ground Up
+          </h1>
+          <h2
+            class="text-xl md:text-2xl text-white/90 font-medium mb-14 tracking-wider drop-shadow-lg max-w-3xl mx-auto leading-[2]"
+          >
+            <span class="text-primary font-semibold">Soil Investigation</span>
+            &nbsp;|&nbsp;
+            <span class="text-primary font-semibold"
+              >Non-Destructive Testing</span
+            >
+            &nbsp;|&nbsp;
+            <span class="text-primary font-semibold"
+              >Site Integrity Analysis</span
+            >
+          </h2>
+          <p
+            class="text-white/85 max-w-2xl mx-auto mb-16 text-lg font-medium leading-[2]"
+          >
+            Delivering precise geotechnical insights and structural integrity
+            assessments for infrastructure projects across India. Trust our 15+
+            years of expertise in building safer foundations.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-6"
+          >
+            <a
+              href="#"
+              class="group inline-flex items-center px-8 py-4 bg-white text-primary font-semibold shadow-2xl hover:shadow-[0_8px_30px_rgb(247,148,29,0.3)] transition-all duration-300 transform hover:-translate-y-1 !rounded-button whitespace-nowrap text-lg"
+            >
+              Request a Site Survey
+              <i
+                class="ri-arrow-right-line ml-2 transition-transform duration-300 group-hover:translate-x-1"
+              ></i>
+            </a>
+            <a
+              href="#"
+              class="group inline-flex items-center px-8 py-4 bg-white/5 text-white border-2 border-white/20 backdrop-blur-lg font-semibold hover:bg-white/15 transition-all duration-300 !rounded-button whitespace-nowrap text-lg shadow-2xl"
+            >
+              View Our Projects
+              <i
+                class="ri-external-link-line ml-2 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+              ></i>
+            </a>
+          </div>
+          <div
+            class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-8 max-w-4xl mx-auto"
+          >
+            <div
+              class="text-center transform hover:-translate-y-1 transition-transform duration-300"
+            >
+              <p class="text-4xl font-bold text-white mb-2">
+                15<span class="text-primary">+</span>
+              </p>
+              <p
+                class="text-white/80 text-sm font-medium uppercase tracking-wider"
+              >
+                Years Experience
+              </p>
+            </div>
+            <div
+              class="text-center transform hover:-translate-y-1 transition-transform duration-300"
+            >
+              <p class="text-4xl font-bold text-white mb-2">
+                500<span class="text-primary">+</span>
+              </p>
+              <p
+                class="text-white/80 text-sm font-medium uppercase tracking-wider"
+              >
+                Projects Completed
+              </p>
+            </div>
+            <div
+              class="text-center transform hover:-translate-y-1 transition-transform duration-300"
+            >
+              <p class="text-4xl font-bold text-white mb-2">
+                50<span class="text-primary">+</span>
+              </p>
+              <p
+                class="text-white/80 text-sm font-medium uppercase tracking-wider"
+              >
+                Expert Engineers
+              </p>
+            </div>
+            <div
+              class="text-center transform hover:-translate-y-1 transition-transform duration-300"
+            >
+              <p class="text-4xl font-bold text-white mb-2">
+                98<span class="text-primary">%</span>
+              </p>
+              <p
+                class="text-white/80 text-sm font-medium uppercase tracking-wider"
+              >
+                Client Satisfaction
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Introduction Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">
+              Expert Geotechnical & NDT Services
+            </h2>
+            <p class="text-gray-700 mb-4">
+              At Elite NDT & Geotech Engineering, we understand that every
+              successful construction project begins with a thorough
+              understanding of the ground beneath. Our comprehensive
+              geotechnical investigation and non-destructive testing services
+              provide critical insights that ensure structural integrity, safety
+              compliance, and optimal design parameters.
+            </p>
+            <p class="text-gray-700 mb-6">
+              With state-of-the-art equipment and a team of certified engineers,
+              we deliver precise data and actionable recommendations that help
+              prevent costly structural issues, reduce construction risks, and
+              extend infrastructure lifespan.
+            </p>
+            <a
+              href="#"
+              class="inline-block px-5 py-2.5 bg-primary text-white font-medium hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap"
+              >Discover Our Approach</a
+            >
+          </div>
+          <div class="md:w-1/2">
+            <img
+              src="https://readdy.ai/api/search-image?query=professional%20geotechnical%20engineers%20working%20at%20a%20construction%20site%2C%20using%20modern%20equipment%20for%20soil%20testing%2C%20high%20quality%20professional%20photography%2C%20realistic%2C%20detailed%2C%20civil%20engineering%20team%2C%20soil%20sampling%20equipment%2C%20people%20wearing%20safety%20gear%20and%20helmets&width=600&height=400&seq=2&orientation=landscape"
+              alt="Geotechnical Engineers at Work"
+              class="w-full h-auto rounded-lg shadow-lg object-cover object-top"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Our Specialized Services
+          </h2>
+          <p class="text-gray-700 max-w-3xl mx-auto">
+            Comprehensive testing and analysis solutions to ensure your
+            project's foundation is built on solid ground.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service Card 1 -->
+          <div class="service-card bg-white p-6 rounded-lg shadow-md">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6 mx-auto"
+            >
+              <i class="ri-earth-line ri-xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">
+              Soil Bearing Capacity Test
+            </h3>
+            <p class="text-gray-700 text-center">
+              Determine the safe bearing capacity of soil to support foundations
+              and prevent structural settlement issues.
+            </p>
+          </div>
+          <!-- Service Card 2 -->
+          <div class="service-card bg-white p-6 rounded-lg shadow-md">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6 mx-auto"
+            >
+              <i class="ri-scales-3-line ri-xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">
+              Plate Load Test
+            </h3>
+            <p class="text-gray-700 text-center">
+              Evaluate soil deformation characteristics and load-bearing
+              capacity through direct field testing methods.
+            </p>
+          </div>
+          <!-- Service Card 3 -->
+          <div class="service-card bg-white p-6 rounded-lg shadow-md">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6 mx-auto"
+            >
+              <i class="ri-hammer-line ri-xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">
+              Core Cutting & Rebound Hammer Test
+            </h3>
+            <p class="text-gray-700 text-center">
+              Assess concrete strength and quality through non-destructive and
+              minimally invasive testing methods.
+            </p>
+          </div>
+          <!-- Service Card 4 -->
+          <div class="service-card bg-white p-6 rounded-lg shadow-md">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6 mx-auto"
+            >
+              <i class="ri-building-line ri-xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">
+              Pile Integrity Testing
+            </h3>
+            <p class="text-gray-700 text-center">
+              Verify structural integrity of deep foundations using sonic echo
+              and impulse response methods.
+            </p>
+          </div>
+          <!-- Service Card 5 -->
+          <div class="service-card bg-white p-6 rounded-lg shadow-md">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6 mx-auto"
+            >
+              <i class="ri-radar-line ri-xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">
+              Ultrasonic Pulse Velocity Test
+            </h3>
+            <p class="text-gray-700 text-center">
+              Detect internal flaws, cracks, and voids in concrete structures
+              using advanced ultrasonic technology.
+            </p>
+          </div>
+          <!-- Service Card 6 -->
+          <div class="service-card bg-white p-6 rounded-lg shadow-md">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6 mx-auto"
+            >
+              <i class="ri-file-chart-line ri-xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">
+              Detailed Site Report & Recommendations
+            </h3>
+            <p class="text-gray-700 text-center">
+              Comprehensive analysis and expert recommendations based on test
+              results to optimize your project design.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Results Counter Section -->
+    <section class="py-16 bg-primary">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div class="counter-container">
+            <div class="text-5xl font-bold text-white mb-2">
+              <span class="counter-value" data-target="200">0</span>+
+            </div>
+            <p class="text-white text-xl">Sites Tested</p>
+          </div>
+          <div class="counter-container">
+            <div class="text-5xl font-bold text-white mb-2">
+              <span class="counter-value" data-target="50">0</span>+
+            </div>
+            <p class="text-white text-xl">Govt Projects</p>
+          </div>
+          <div class="counter-container">
+            <div class="text-5xl font-bold text-white mb-2">
+              <span class="counter-value" data-target="100">0</span>%
+            </div>
+            <p class="text-white text-xl">Safety Compliance</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Projects Showcase -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Recent Projects</h2>
+          <p class="text-gray-700 max-w-3xl mx-auto">
+            Delivering reliable geotechnical and NDT solutions for diverse
+            infrastructure projects.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project Card 1 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-md">
+            <img
+              src="https://readdy.ai/api/search-image?query=modern%20high-rise%20building%20construction%20site%2C%20foundation%20work%2C%20soil%20testing%20equipment%20visible%2C%20professional%20civil%20engineering%20project%2C%20realistic%20photography&width=400&height=300&seq=3&orientation=landscape"
+              alt="Commercial Tower Project"
+              class="w-full h-56 object-cover object-top"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Commercial Tower, Mumbai
+              </h3>
+              <p class="text-gray-700 mb-4">
+                Comprehensive soil investigation and foundation integrity
+                testing for a 40-story commercial complex.
+              </p>
+              <div class="flex items-center text-primary">
+                <span class="font-medium">View Case Study</span>
+                <i class="ri-arrow-right-line ri-lg ml-2"></i>
+              </div>
+            </div>
+          </div>
+          <!-- Project Card 2 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-md">
+            <img
+              src="https://readdy.ai/api/search-image?query=highway%20bridge%20construction%2C%20concrete%20testing%20equipment%2C%20engineers%20analyzing%20structural%20integrity%2C%20professional%20civil%20engineering%20project%2C%20realistic%20photography&width=400&height=300&seq=4&orientation=landscape"
+              alt="Highway Bridge Project"
+              class="w-full h-56 object-cover object-top"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                NH-48 Highway Bridge
+              </h3>
+              <p class="text-gray-700 mb-4">
+                NDT assessment and pile integrity testing for critical highway
+                infrastructure project.
+              </p>
+              <div class="flex items-center text-primary">
+                <span class="font-medium">View Case Study</span>
+                <i class="ri-arrow-right-line ri-lg ml-2"></i>
+              </div>
+            </div>
+          </div>
+          <!-- Project Card 3 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-md">
+            <img
+              src="https://readdy.ai/api/search-image?query=industrial%20facility%20construction%20site%2C%20soil%20testing%20equipment%2C%20geotechnical%20engineers%20working%2C%20professional%20civil%20engineering%20project%2C%20realistic%20photography&width=400&height=300&seq=5&orientation=landscape"
+              alt="Industrial Facility Project"
+              class="w-full h-56 object-cover object-top"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Pharma Manufacturing Facility
+              </h3>
+              <p class="text-gray-700 mb-4">
+                Soil bearing capacity and structural integrity testing for
+                precision manufacturing facility.
+              </p>
+              <div class="flex items-center text-primary">
+                <span class="font-medium">View Case Study</span>
+                <i class="ri-arrow-right-line ri-lg ml-2"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-10">
+          <a
+            href="#"
+            class="inline-block px-6 py-3 border border-primary text-primary font-medium hover:bg-primary hover:text-white transition-colors !rounded-button whitespace-nowrap"
+            >View All Projects</a
+          >
+        </div>
+      </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg text-center">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">
+            Build Strong From Beneath the Surface
+          </h2>
+          <p class="text-gray-700 mb-8 max-w-2xl mx-auto">
+            Ready to ensure your project's foundation is built on solid ground?
+            Our team of expert engineers is ready to provide the insights you
+            need for safe, efficient, and compliant construction.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="#"
+              class="px-6 py-3 bg-primary text-white font-medium hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap"
+              >Talk to Our Experts</a
+            >
+            <a
+              href="#"
+              class="px-6 py-3 border border-primary text-primary font-medium hover:bg-primary hover:text-white transition-colors !rounded-button whitespace-nowrap"
+              >Submit Your Site Details</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <!-- Company Info -->
+          <div>
+            <img
+              src="https://static.readdy.ai/image/a63ec0b6f34fb9b66d50256c348ce6a2/f8990d2a20fba43628bb51175cf3c0c1.png"
+              alt="Elite Geotech & NDT Logo"
+              class="h-12 w-auto mb-4"
+            />
+            <p class="text-gray-400 mb-4">
+              Elite NDT & Geotech Engineering provides comprehensive testing and
+              analysis services to ensure your construction projects are built
+              on solid foundations.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+              >
+                <i class="ri-facebook-fill ri-lg"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+              >
+                <i class="ri-twitter-fill ri-lg"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+              >
+                <i class="ri-linkedin-fill ri-lg"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+              >
+                <i class="ri-instagram-fill ri-lg"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Services -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Our Services</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Soil Bearing Capacity Test</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Plate Load Test</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Core Cutting & Rebound Hammer Test</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Pile Integrity Testing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Ultrasonic Pulse Velocity Test</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Site Reports & Recommendations</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Contact Info -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+                  <i class="ri-map-pin-line text-primary"></i>
+                </div>
+                <span class="text-gray-400"
+                  >Elite Tower, 123 Engineering Road, Mumbai, Maharashtra
+                  400001, India</span
+                >
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                  <i class="ri-phone-line text-primary"></i>
+                </div>
+                <span class="text-gray-400">+91 98765 43210</span>
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                  <i class="ri-mail-line text-primary"></i>
+                </div>
+                <span class="text-gray-400">info@elitendtgeotech.com</span>
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                  <i class="ri-time-line text-primary"></i>
+                </div>
+                <span class="text-gray-400">Mon-Fri: 9:00 AM - 6:00 PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="pt-8 border-t border-gray-800 text-center text-gray-500">
+          <p>
+            © 2025 Elite NDT & Geotech Engineering. All rights reserved. A
+            division of Elite Enterprises.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script id="mobile-menu-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+          // Change icon based on menu state
+          const icon = mobileMenuButton.querySelector("i");
+          if (mobileMenu.classList.contains("hidden")) {
+            icon.classList.remove("ri-close-line");
+            icon.classList.add("ri-menu-line");
+          } else {
+            icon.classList.remove("ri-menu-line");
+            icon.classList.add("ri-close-line");
+          }
+        });
+      });
+    </script>
+    <script id="counter-animation-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const counters = document.querySelectorAll(".counter-value");
+        const speed = 200;
+        const animateCounters = () => {
+          counters.forEach((counter) => {
+            const target = +counter.dataset.target;
+            const count = +counter.innerText;
+            const increment = target / speed;
+            if (count < target) {
+              counter.innerText = Math.ceil(count + increment);
+              setTimeout(animateCounters, 1);
+            } else {
+              counter.innerText = target;
+            }
+          });
+        };
+        // Check if element is in viewport
+        const isInViewport = (element) => {
+          const rect = element.getBoundingClientRect();
+          return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <=
+              (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <=
+              (window.innerWidth || document.documentElement.clientWidth)
+          );
+        };
+        // Start animation when counter section is in viewport
+        const checkIfInView = () => {
+          const counterSection = document.querySelector(".counter-container");
+          if (isInViewport(counterSection)) {
+            animateCounters();
+            window.removeEventListener("scroll", checkIfInView);
+          }
+        };
+        window.addEventListener("scroll", checkIfInView);
+        checkIfInView(); // Check on load
+      });
+    </script>
+    <!--  -->
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        // Check if function has run before
+        const hasRun = localStorage.getItem("eliteUrl");
+        const fullURL = window.location.href;
+        if (!hasRun) {
+          console.log("This runs only once for this user/browser.");
+          localStorage.setItem("hasRun", "true");
+          localStorage.setItem("eliteUrl", fullURL);
+        } else {
+          console.log("Not running again.");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Elite Enterprises</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdn.tailwindcss.com/3.4.16">
+</script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { primary: "#f7941d", secondary: "#4a5568" },
+      borderRadius: {
+        none: "0px",
+        sm: "4px",
+        DEFAULT: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "20px",
+        "2xl": "24px",
+        "3xl": "32px",
+        full: "9999px",
+        button: "8px",
+      },
+    },
+  },
+};
+</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+}
+.navbar {
+transition: all 0.3s ease;
+}
+.hero-content {
+animation: fadeIn 0.5s ease-in;
+}
+.gallery-item:hover .gallery-image {
+transform: scale(1.05);
+}
+.gallery-item:hover .gallery-overlay {
+opacity: 0.4;
+}
+.gallery-item:hover .gallery-title {
+transform: translateY(-5px);
+}
+.gallery-image {
+transition: transform 0.3s ease;
+}
+.gallery-overlay {
+transition: opacity 0.3s ease;
+opacity: 0;
+}
+.gallery-title {
+transition: transform 0.3s ease;
+}
+.spinner {
+border: 3px solid rgba(255, 255, 255, 0.3);
+border-radius: 50%;
+border-top: 3px solid #fff;
+width: 20px;
+height: 20px;
+animation: spin 1s linear infinite;
+display: none;
+}
+.load-more:hover .spinner {
+display: inline-block;
+}
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.mobile-menu {
+transition: max-height 0.3s ease;
+max-height: 0;
+overflow: hidden;
+}
+.mobile-menu.active {
+max-height: 500px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+     <script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const imageElement = document.getElementById("myImage");
+    const url = localStorage.getItem("myImage");
+
+    if (imageElement && url) {
+      imageElement.src = url;
+    }
+    
+  });
+</script>
+<!-- Navigation Bar -->
+<nav class="navbar fixed top-0 left-0 w-full bg-gradient-to-b from-gray-50 to-white rounded-b-xl shadow-sm z-50">
+<div class="container mx-auto px-6">
+<div class="flex items-center justify-between h-20 md:h-[80px]">
+<!-- Logo -->
+ <img
+          id="myImage"
+          src=""
+            alt="Elite Enterprises Logo"
+            class="h-[60px] w-auto"
+          />
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center justify-center space-x-10">
+<a href="/" class="text-gray-800 hover:text-primary transition-colors font-semibold">Home</a>
+<a href="/aboutus.html" class="text-gray-800 hover:text-primary transition-colors font-semibold">About Us</a>
+<a href="/gallery.html" class="text-primary font-semibold">Gallery</a>
+<!-- <a href="/services" class="text-gray-800 hover:text-primary transition-colors font-semibold">Services</a> -->
+<a href="/careers.html" class="text-gray-800 hover:text-primary transition-colors font-semibold">Careers</a>
+<a href="/contactus.html" class="text-gray-800 hover:text-primary transition-colors font-semibold">Contact Us</a>
+</div>
+<!-- Desktop CTA Buttons -->
+<div class="hidden md:flex items-center space-x-5">
+<button class="border-2 border-primary text-primary px-6 py-2.5 rounded-button hover:bg-primary/5 transition-colors whitespace-nowrap font-semibold">Get Started</button>
+<button class="bg-primary text-white px-6 py-2.5 rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap font-semibold shadow-sm">Contact Us</button>
+</div>
+<!-- Mobile Menu Button -->
+<div class="md:hidden w-12 h-12 flex items-center justify-center" id="mobile-menu-button">
+<i class="ri-menu-line text-gray-800 text-2xl"></i>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div class="mobile-menu md:hidden" id="mobile-menu">
+<div class="py-6 space-y-4">
+<a href="/" class="block text-gray-800 hover:text-primary transition-colors font-semibold">Home</a>
+<a href="/aboutus.html" class="block text-gray-800 hover:text-primary transition-colors font-semibold">About Us</a>
+<a href="/gallery.html" class="block text-primary font-semibold">Gallery</a>
+<!-- <a href="/services" class="block text-gray-800 hover:text-primary transition-colors font-semibold">Services</a> -->
+<a href="/careers.html" class="block text-gray-800 hover:text-primary transition-colors font-semibold">Careers</a>
+<a href="/contactus.html" class="block text-gray-800 hover:text-primary transition-colors font-semibold">Contact Us</a>
+<div class="flex flex-col space-y-3 pt-4">
+<button class="border-2 border-primary text-primary px-6 py-2.5 rounded-button hover:bg-primary/5 transition-colors whitespace-nowrap font-semibold">Get Started</button>
+<button class="bg-primary text-white px-6 py-2.5 rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap font-semibold shadow-sm">Contact Us</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-16 md:pt-20">
+<div class="absolute inset-0 bg-black/60 z-10"></div>
+<div class="relative h-[60vh] min-h-[400px]" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20architectural%20construction%20site%20with%20tall%20buildings%20and%20cranes%2C%20professional%20engineering%20project%2C%20high%20quality%20architectural%20photography%2C%20dramatic%20lighting%2C%20wide%20angle%20lens%2C%20detailed%20construction%20elements&width=1600&height=900&seq=hero1&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="absolute inset-0 flex items-center justify-center z-20">
+<div class="hero-content text-center text-white px-6 max-w-3xl">
+<h1 class="text-4xl md:text-5xl font-bold mb-4">Our Work in Action</h1>
+<p class="text-lg md:text-xl opacity-90">Explore the projects that define our engineering excellence across Maharashtra.</p>
+</div>
+</div>
+</section>
+<!-- Gallery Grid -->
+<!-- Gallery Grid -->
+<section class="py-16 md:py-20">
+<div class="container mx-auto px-6 max-w-7xl">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+<!-- Gallery Item 1 -->
+<div class="gallery-item cursor-pointer overflow-hidden rounded">
+<img src="https://readdy.ai/api/search-image?query=modern%20high-rise%20commercial%20building%20with%20glass%20facade%2C%20clean%20architectural%20lines%2C%20professional%20real%20estate%20photography%2C%20bright%20daylight%2C%20urban%20setting%2C%20detailed%20exterior%20view&width=800&height=600&seq=gallery1&orientation=landscape" alt="Project Image" class="w-full aspect-[4/3] object-cover object-top hover:scale-105 transition-transform duration-300">
+</div>
+<!-- Gallery Item 2 -->
+<div class="gallery-item cursor-pointer overflow-hidden rounded">
+<img src="https://readdy.ai/api/search-image?query=modern%20residential%20apartment%20complex%20with%20landscaped%20gardens%2C%20contemporary%20architecture%2C%20professional%20real%20estate%20photography%2C%20bright%20daylight%2C%20clean%20lines%2C%20detailed%20exterior%20view&width=800&height=600&seq=gallery2&orientation=landscape" alt="Project Image" class="w-full aspect-[4/3] object-cover object-top hover:scale-105 transition-transform duration-300">
+</div>
+<!-- Gallery Item 3 -->
+<div class="gallery-item cursor-pointer overflow-hidden rounded">
+<img src="https://readdy.ai/api/search-image?query=modern%20highway%20infrastructure%20project%20with%20bridges%20and%20overpasses%2C%20civil%20engineering%20marvel%2C%20professional%20infrastructure%20photography%2C%20bright%20daylight%2C%20detailed%20construction%20elements&width=800&height=600&seq=gallery3&orientation=landscape" alt="Project Image" class="w-full aspect-[4/3] object-cover object-top hover:scale-105 transition-transform duration-300">
+</div>
+<!-- Gallery Item 4 -->
+<div class="gallery-item cursor-pointer overflow-hidden rounded">
+<img src="https://readdy.ai/api/search-image?query=modern%20hospital%20building%20with%20clean%20design%2C%20healthcare%20facility%20architecture%2C%20professional%20architectural%20photography%2C%20bright%20daylight%2C%20detailed%20exterior%20view&width=800&height=600&seq=gallery4&orientation=landscape" alt="Project Image" class="w-full aspect-[4/3] object-cover object-top hover:scale-105 transition-transform duration-300">
+</div>
+<!-- Gallery Item 5 -->
+<div class="gallery-item cursor-pointer overflow-hidden rounded">
+<img src="https://readdy.ai/api/search-image?query=modern%20shopping%20mall%20with%20glass%20atrium%2C%20retail%20architecture%2C%20professional%20commercial%20photography%2C%20bright%20interior%20lighting%2C%20detailed%20architectural%20elements&width=800&height=600&seq=gallery5&orientation=landscape" alt="Project Image" class="w-full aspect-[4/3] object-cover object-top hover:scale-105 transition-transform duration-300">
+</div>
+<!-- Gallery Item 6 -->
+<div class="gallery-item cursor-pointer overflow-hidden rounded">
+<img src="https://readdy.ai/api/search-image?query=modern%20industrial%20facility%20with%20advanced%20manufacturing%20equipment%2C%20industrial%20architecture%2C%20professional%20industrial%20photography%2C%20bright%20lighting%2C%20detailed%20technical%20elements&width=800&height=600&seq=gallery6&orientation=landscape" alt="Project Image" class="w-full aspect-[4/3] object-cover object-top hover:scale-105 transition-transform duration-300">
+</div>
+<!-- Gallery Item 7 -->
+<div class="gallery-item cursor-pointer overflow-hidden rounded">
+<img src="https://readdy.ai/api/search-image?query=modern%20school%20campus%20with%20innovative%20architecture%2C%20educational%20facility%20design%2C%20professional%20architectural%20photography%2C%20bright%20daylight%2C%20detailed%20exterior%20view&width=800&height=600&seq=gallery7&orientation=landscape" alt="Project Image" class="w-full aspect-[4/3] object-cover object-top hover:scale-105 transition-transform duration-300">
+</div>
+<!-- Gallery Item 8 -->
+<div class="gallery-item cursor-pointer overflow-hidden rounded">
+<img src="https://readdy.ai/api/search-image?query=modern%20water%20treatment%20plant%20with%20advanced%20filtration%20systems%2C%20environmental%20engineering%20project%2C%20professional%20industrial%20photography%2C%20bright%20daylight%2C%20detailed%20technical%20elements&width=800&height=600&seq=gallery8&orientation=landscape" alt="Project Image" class="w-full aspect-[4/3] object-cover object-top hover:scale-105 transition-transform duration-300">
+</div>
+<!-- Gallery Item 9 -->
+<div class="gallery-item cursor-pointer overflow-hidden rounded">
+<img src="https://readdy.ai/api/search-image?query=modern%20luxury%20hotel%20with%20elegant%20facade%2C%20hospitality%20architecture%2C%20professional%20architectural%20photography%2C%20bright%20daylight%2C%20detailed%20exterior%20view&width=800&height=600&seq=gallery9&orientation=landscape" alt="Project Image" class="w-full aspect-[4/3] object-cover object-top hover:scale-105 transition-transform duration-300">
+</div>
+</div>
+<!-- Load More Button -->
+<div class="mt-12 text-center">
+<button class="load-more bg-primary text-white px-6 py-3 rounded-button hover:bg-primary/90 transition-colors flex items-center justify-center mx-auto whitespace-nowrap">
+<span>Load More</span>
+<div class="spinner ml-2"></div>
+</button>
+</div>
+</div>
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden">
+<button class="absolute top-4 right-4 text-white hover:text-primary transition-colors">
+<i class="ri-close-line text-3xl"></i>
+</button>
+<button class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors">
+<i class="ri-arrow-left-line text-3xl"></i>
+</button>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors">
+<i class="ri-arrow-right-line text-3xl"></i>
+</button>
+<div class="flex items-center justify-center h-full">
+<img src="" alt="Lightbox Image" class="max-h-[90vh] max-w-[90vw] object-contain">
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-white py-16 md:py-20">
+<div class="container mx-auto px-6 max-w-4xl text-center">
+<h2 class="text-3xl md:text-4xl font-bold mb-8">Want to build with Elite?</h2>
+<div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6">
+<button class="bg-primary text-white px-6 py-3 rounded-button hover:bg-primary/90 transition-colors w-full md:w-auto whitespace-nowrap">Book a Consultation</button>
+<button class="border border-primary text-primary px-6 py-3 rounded-button hover:bg-primary hover:text-white transition-colors w-full md:w-auto whitespace-nowrap">Share Your Project Idea</button>
+</div>
+</div>
+</section>
+<script id="mobile-menu-script">
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  mobileMenuButton.addEventListener("click", function () {
+    mobileMenu.classList.toggle("active");
+    const icon = mobileMenuButton.querySelector("i");
+    if (mobileMenu.classList.contains("active")) {
+      icon.classList.remove("ri-menu-line");
+      icon.classList.add("ri-close-line");
+    } else {
+      icon.classList.remove("ri-close-line");
+      icon.classList.add("ri-menu-line");
+    }
+  });
+});
+</script>
+<script id="gallery-script">
+document.addEventListener("DOMContentLoaded", function () {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = lightbox.querySelector("img");
+  const galleryItems = document.querySelectorAll(".gallery-item img");
+  const closeBtn = lightbox.querySelector(".ri-close-line").parentElement;
+  const prevBtn = lightbox.querySelector(".ri-arrow-left-line").parentElement;
+  const nextBtn = lightbox.querySelector(".ri-arrow-right-line").parentElement;
+  let currentIndex = 0;
+
+  function showImage(index) {
+    currentIndex = index;
+    lightboxImg.src = galleryItems[index].src;
+    lightbox.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+  }
+
+  function hideImage() {
+    lightbox.classList.add("hidden");
+    document.body.style.overflow = "";
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % galleryItems.length;
+    lightboxImg.src = galleryItems[currentIndex].src;
+  }
+
+  function showPrev() {
+    currentIndex =
+      (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+    lightboxImg.src = galleryItems[currentIndex].src;
+  }
+
+  galleryItems.forEach((img, index) => {
+    img.addEventListener("click", () => showImage(index));
+  });
+
+  closeBtn.addEventListener("click", hideImage);
+  nextBtn.addEventListener("click", showNext);
+  prevBtn.addEventListener("click", showPrev);
+
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox.classList.contains("hidden")) {
+      if (e.key === "Escape") hideImage();
+      if (e.key === "ArrowRight") showNext();
+      if (e.key === "ArrowLeft") showPrev();
+    }
+  });
+
+  const loadMoreButton = document.querySelector(".load-more");
+  loadMoreButton.addEventListener("click", function () {
+    const spinner = this.querySelector(".spinner");
+    spinner.style.display = "inline-block";
+    setTimeout(function () {
+      spinner.style.display = "none";
+      loadMoreButton.textContent = "No More Images";
+      loadMoreButton.disabled = true;
+      loadMoreButton.classList.add("bg-gray-400");
+      loadMoreButton.classList.remove("bg-primary", "hover:bg-primary/90");
+    }, 1500);
+  });
+
+  if (window.innerWidth < 768) {
+    window.addEventListener("scroll", function () {
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      if (scrollPosition >= documentHeight - 100 && !loadMoreButton.disabled) {
+        loadMoreButton.click();
+      }
+    });
+  }
+});
+</script>
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 pt-16 pb-12">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<!-- Company Info -->
+<div>
+<a href="/" class="font-['Pacifico'] text-2xl text-white mb-6 block">logo</a>
+<p class="text-sm leading-relaxed mb-6">Elite Enterprises has been at the forefront of engineering excellence since 1995, delivering innovative solutions across Maharashtra.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-700 hover:border-primary hover:text-primary transition-colors">
+<i class="ri-linkedin-line"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-700 hover:border-primary hover:text-primary transition-colors">
+<i class="ri-twitter-x-line"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-700 hover:border-primary hover:text-primary transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-700 hover:border-primary hover:text-primary transition-colors">
+<i class="ri-facebook-line"></i>
+</a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h3 class="text-white font-semibold mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="/aboutus.html" class="hover:text-primary transition-colors">About Us</a></li>
+<!-- <li><a href="/services" class="hover:text-primary transition-colors">Our Services</a></li> -->
+<!-- <li><a href="/projects" class="hover:text-primary transition-colors">Latest Projects</a></li> -->
+<li><a href="/careers.html" class="hover:text-primary transition-colors">Career Opportunities</a></li>
+<!-- <li><a href="/news" class="hover:text-primary transition-colors">News & Updates</a></li> -->
+</ul>
+</div>
+<!-- Services -->
+<div>
+<h3 class="text-white font-semibold mb-6">Our Services</h3>
+<ul class="space-y-3">
+<li><a href="/services/construction" class="hover:text-primary transition-colors">Construction Management</a></li>
+<li><a href="/services/design" class="hover:text-primary transition-colors">Architectural Design</a></li>
+<li><a href="/services/renovation" class="hover:text-primary transition-colors">Renovation Services</a></li>
+<li><a href="/services/consulting" class="hover:text-primary transition-colors">Engineering Consulting</a></li>
+<li><a href="/services/sustainability" class="hover:text-primary transition-colors">Sustainable Solutions</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div>
+<h3 class="text-white font-semibold mb-6">Contact Us</h3>
+<ul class="space-y-3">
+<li class="flex items-start space-x-3">
+<i class="ri-map-pin-line mt-1"></i>
+<span>123 Business Hub, Bandra Kurla Complex, Mumbai, Maharashtra 400051</span>
+</li>
+<li class="flex items-center space-x-3">
+<i class="ri-phone-line"></i>
+<span>+91 22 1234 5678</span>
+</li>
+<li class="flex items-center space-x-3">
+<i class="ri-mail-line"></i>
+<span>contact@eliteenterprises.com</span>
+</li>
+<li class="flex items-center space-x-3">
+<i class="ri-time-line"></i>
+<span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Bottom Bar -->
+<div class="border-t border-gray-800 mt-12 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-sm">&copy; 2025 Elite Enterprises. All rights reserved.</p>
+<div class="flex space-x-6 mt-4 md:mt-0">
+<a href="/privacy" class="text-sm hover:text-primary transition-colors">Privacy Policy</a>
+<a href="/terms" class="text-sm hover:text-primary transition-colors">Terms of Service</a>
+<a href="/sitemap" class="text-sm hover:text-primary transition-colors">Sitemap</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>

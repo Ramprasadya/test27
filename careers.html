@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Careers - Elite Enterprises</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#f7941d", secondary: "#333333" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Poppins', sans-serif;
+      color: #333333;
+      }
+      .hero-section {
+      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://readdy.ai/api/search-image?query=modern%20office%20environment%20with%20diverse%20team%20of%20professionals%20collaborating%2C%20bright%20spacious%20workspace%20with%20glass%20walls%2C%20natural%20light%2C%20plants%2C%20contemporary%20furniture%2C%20people%20working%20together%20on%20engineering%20projects%2C%20professional%20atmosphere&width=1920&height=800&seq=careers-hero&orientation=landscape');
+      background-size: cover;
+      background-position: center;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+      }
+      /* input[type=number] {
+      -moz-appearance: textfield;
+      } */
+    </style>
+  </head>
+  <body class="min-h-screen">
+       <script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const imageElement = document.getElementById("myImage");
+    const url = localStorage.getItem("myImage");
+
+    if (imageElement && url) {
+      imageElement.src = url;
+    }
+  });
+</script>
+    <!-- Navigation Bar -->
+    <header
+      class="fixed top-0 left-0 right-0 bg-gradient-to-b from-gray-50 to-white rounded-b-xl shadow-md z-50"
+    >
+      <div
+        class="container mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <a href="/" class="h-[60px] flex items-center">
+          <img
+          id="myImage"
+            src=""
+            alt="Elite Enterprises"
+            class="h-full"
+            />
+            <!-- src="https://static.readdy.ai/image/a63ec0b6f34fb9b66d50256c348ce6a2/14473f2f2ab90e80defb244166b75318.png" -->
+        </a>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-10">
+          <a
+            href="/"
+            class="text-gray-800 hover:text-primary transition-colors font-semibold"
+            >Home</a
+          >
+          <a
+            href="/aboutus.html"
+            class="text-gray-800 hover:text-primary transition-colors font-semibold"
+            >About Us</a
+          >
+          <a
+            href="/gallery.html"
+            class="text-gray-800 hover:text-primary transition-colors font-semibold"
+            >Gallery</a
+          >
+          <!-- <a
+            href="/services"
+            class="text-gray-800 hover:text-primary transition-colors font-semibold"
+            >Services</a
+          > -->
+          <a href="/careers.html" class="text-primary font-semibold">Careers</a>
+          <a
+            href="/contactus.html"
+            class="text-gray-800 hover:text-primary transition-colors font-semibold"
+            >Contact Us</a
+          >
+        </nav>
+        <!-- CTA Buttons -->
+        <div class="hidden md:flex items-center space-x-5">
+          <a
+            href="/get-started"
+            class="border-2 border-primary text-primary px-6 py-2.5 !rounded-button whitespace-nowrap hover:bg-primary/5 transition-all font-semibold"
+            >Get Started</a
+          >
+          <a
+            href="/contact"
+            class="bg-primary text-white px-6 py-2.5 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-all font-semibold shadow-sm"
+            >Contact Us</a
+          >
+        </div>
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-button"
+          class="md:hidden w-12 h-12 flex items-center justify-center text-gray-800 hover:bg-gray-100 rounded-lg transition-colors"
+        >
+          <i class="ri-menu-line ri-xl"></i>
+        </button>
+      </div>
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+          <a
+            href="/"
+            class="text-gray-800 py-3 hover:text-primary transition-colors font-semibold"
+            >Home</a
+          >
+          <a
+            href="/aboutus.html"
+            class="text-gray-800 py-3 hover:text-primary transition-colors font-semibold"
+            >About Us</a
+          >
+          <a
+            href="/gallery.html"
+            class="text-gray-800 py-3 hover:text-primary transition-colors font-semibold"
+            >Gallery</a
+          >
+          <!-- <a
+            href="/services"
+            class="text-gray-800 py-3 hover:text-primary transition-colors font-semibold"
+            >Services</a
+          > -->
+          <a href="/careers.html" class="text-primary py-3 font-semibold">Careers</a>
+          <a
+            href="/contactus.html"
+            class="text-gray-800 py-3 hover:text-primary transition-colors font-semibold"
+            >Contact Us</a
+          >
+          <div class="flex flex-col space-y-4 pt-4 border-t">
+            <a
+              href="/get-started"
+              class="border-2 border-primary text-primary px-6 py-3 !rounded-button text-center whitespace-nowrap hover:bg-primary/5 transition-all font-semibold"
+              >Get Started</a
+            >
+            <a
+              href="/contactus.html"
+              class="bg-primary text-white px-6 py-3 !rounded-button text-center whitespace-nowrap hover:bg-primary/90 transition-all font-semibold shadow-sm"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="pt-16">
+      <!-- Hero Section -->
+      <section
+        class="hero-section w-full h-[500px] flex items-center justify-center"
+      >
+        <div class="container mx-auto px-4 text-center text-white">
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in"
+          >
+            Careers at Elite Enterprises
+          </h1>
+          <p class="text-xl md:text-2xl max-w-3xl mx-auto">
+            We're always looking for passionate people to grow with us.
+          </p>
+        </div>
+      </section>
+      <!-- Current Openings Section -->
+      <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            Current Openings
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Job Card 1 -->
+            <div
+              class="bg-white rounded-lg shadow-md p-6 transition-transform hover:-translate-y-1"
+            >
+              <h3 class="text-xl font-semibold text-primary mb-2">
+                Senior Civil Engineer
+              </h3>
+              <div class="flex items-center mb-2 text-gray-600">
+                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <span>Mumbai / Hybrid</span>
+              </div>
+              <div class="flex items-center mb-4 text-gray-600">
+                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                  <i class="ri-time-line"></i>
+                </div>
+                <span>Full-time</span>
+              </div>
+              <p class="text-gray-700 mb-6">
+                Lead structural design for commercial buildings and
+                infrastructure projects. Minimum 5 years experience required.
+              </p>
+              <a
+                href="https://forms.google.com/civil-engineer-application"
+                class="inline-block bg-primary text-white px-6 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors"
+                >Apply Now</a
+              >
+            </div>
+            <!-- Job Card 2 -->
+            <div
+              class="bg-white rounded-lg shadow-md p-6 transition-transform hover:-translate-y-1"
+            >
+              <h3 class="text-xl font-semibold text-primary mb-2">
+                Structural Designer
+              </h3>
+              <div class="flex items-center mb-2 text-gray-600">
+                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <span>Bangalore / Remote</span>
+              </div>
+              <div class="flex items-center mb-4 text-gray-600">
+                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                  <i class="ri-time-line"></i>
+                </div>
+                <span>Full-time</span>
+              </div>
+              <p class="text-gray-700 mb-6">
+                Create detailed structural designs using AutoCAD and Revit.
+                Experience with BIM modeling preferred.
+              </p>
+              <a
+                href="https://forms.google.com/structural-designer-application"
+                class="inline-block bg-primary text-white px-6 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors"
+                >Apply Now</a
+              >
+            </div>
+            <!-- Job Card 3 -->
+            <div
+              class="bg-white rounded-lg shadow-md p-6 transition-transform hover:-translate-y-1"
+            >
+              <h3 class="text-xl font-semibold text-primary mb-2">
+                Project Manager
+              </h3>
+              <div class="flex items-center mb-2 text-gray-600">
+                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <span>Delhi / On-site</span>
+              </div>
+              <div class="flex items-center mb-4 text-gray-600">
+                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                  <i class="ri-time-line"></i>
+                </div>
+                <span>Full-time</span>
+              </div>
+              <p class="text-gray-700 mb-6">
+                Oversee construction projects from planning to completion. PMP
+                certification and 7+ years experience required.
+              </p>
+              <a
+                href="https://forms.google.com/project-manager-application"
+                class="inline-block bg-primary text-white px-6 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors"
+                >Apply Now</a
+              >
+            </div>
+            <!-- Job Card 4 -->
+            <div
+              class="bg-white rounded-lg shadow-md p-6 transition-transform hover:-translate-y-1"
+            >
+              <h3 class="text-xl font-semibold text-primary mb-2">
+                Environmental Engineer
+              </h3>
+              <div class="flex items-center mb-2 text-gray-600">
+                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <span>Chennai / Hybrid</span>
+              </div>
+              <div class="flex items-center mb-4 text-gray-600">
+                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                  <i class="ri-time-line"></i>
+                </div>
+                <span>Full-time</span>
+              </div>
+              <p class="text-gray-700 mb-6">
+                Conduct environmental impact assessments and develop sustainable
+                solutions for construction projects.
+              </p>
+              <a
+                href="https://forms.google.com/environmental-engineer-application"
+                class="inline-block bg-primary text-white px-6 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors"
+                >Apply Now</a
+              >
+            </div>
+            <!-- Job Card 5 -->
+            <div
+              class="bg-white rounded-lg shadow-md p-6 transition-transform hover:-translate-y-1"
+            >
+              <h3 class="text-xl font-semibold text-primary mb-2">
+                BIM Specialist
+              </h3>
+              <div class="flex items-center mb-2 text-gray-600">
+                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <span>Pune / Remote</span>
+              </div>
+              <div class="flex items-center mb-4 text-gray-600">
+                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                  <i class="ri-time-line"></i>
+                </div>
+                <span>Contract</span>
+              </div>
+              <p class="text-gray-700 mb-6">
+                Create and manage Building Information Models for complex
+                construction projects using advanced software tools.
+              </p>
+              <a
+                href="https://forms.google.com/bim-specialist-application"
+                class="inline-block bg-primary text-white px-6 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors"
+                >Apply Now</a
+              >
+            </div>
+            <!-- Job Card 6 -->
+            <div
+              class="bg-white rounded-lg shadow-md p-6 transition-transform hover:-translate-y-1"
+            >
+              <h3 class="text-xl font-semibold text-primary mb-2">
+                Construction Site Supervisor
+              </h3>
+              <div class="flex items-center mb-2 text-gray-600">
+                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <span>Hyderabad / On-site</span>
+              </div>
+              <div class="flex items-center mb-4 text-gray-600">
+                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                  <i class="ri-time-line"></i>
+                </div>
+                <span>Full-time</span>
+              </div>
+              <p class="text-gray-700 mb-6">
+                Oversee day-to-day construction activities, ensure safety
+                protocols, and coordinate with subcontractors.
+              </p>
+              <a
+                href="https://forms.google.com/site-supervisor-application"
+                class="inline-block bg-primary text-white px-6 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors"
+                >Apply Now</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- General Application Section -->
+      <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+          <div
+            class="bg-white rounded-lg shadow-md p-8 md:p-12 flex flex-col md:flex-row items-center justify-between"
+          >
+            <div class="mb-6 md:mb-0 text-center md:text-left">
+              <h3 class="text-2xl md:text-3xl font-bold mb-2">
+                Didn't find a matching role?
+              </h3>
+              <p class="text-gray-600">
+                We're always looking for talented individuals to join our team.
+              </p>
+            </div>
+            <a
+              href="https://forms.google.com/general-application"
+              class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors text-lg"
+              >Submit Your Resume</a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- Why Work With Us Section -->
+      <section class="py-16">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            Why Work With Us
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Benefit 1 -->
+            <div
+              class="bg-white rounded-lg shadow-md p-8 text-center transition-transform hover:-translate-y-1"
+            >
+              <div
+                class="w-16 h-16 mx-auto mb-6 text-primary flex items-center justify-center"
+              >
+                <i class="ri-line-chart-line ri-3x"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-4">
+                Growth-Oriented Culture
+              </h3>
+              <p class="text-gray-600">
+                We invest in your professional development with mentorship
+                programs, training opportunities, and clear career progression
+                paths.
+              </p>
+            </div>
+            <!-- Benefit 2 -->
+            <div
+              class="bg-white rounded-lg shadow-md p-8 text-center transition-transform hover:-translate-y-1"
+            >
+              <div
+                class="w-16 h-16 mx-auto mb-6 text-primary flex items-center justify-center"
+              >
+                <i class="ri-heart-line ri-3x"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-4">Work-Life Balance</h3>
+              <p class="text-gray-600">
+                Flexible work arrangements, generous time off, wellness
+                programs, and a supportive environment that prioritizes your
+                well-being.
+              </p>
+            </div>
+            <!-- Benefit 3 -->
+            <div
+              class="bg-white rounded-lg shadow-md p-8 text-center transition-transform hover:-translate-y-1"
+            >
+              <div
+                class="w-16 h-16 mx-auto mb-6 text-primary flex items-center justify-center"
+              >
+                <i class="ri-building-line ri-3x"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-4">Project Diversity</h3>
+              <p class="text-gray-600">
+                Work on a wide range of challenging projects across different
+                sectors, expanding your expertise and keeping work interesting.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Employee Testimonials -->
+      <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            What Our Team Says
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-16 h-16 rounded-full bg-gray-200 mr-4 overflow-hidden"
+                >
+                  <img
+                    src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20an%20Indian%20woman%20in%20her%2030s%20with%20a%20friendly%20smile%2C%20business%20attire%2C%20neutral%20background%2C%20high%20quality%20portrait&width=200&height=200&seq=employee1&orientation=squarish"
+                    alt="Priya Sharma"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold">Priya Sharma</h4>
+                  <p class="text-gray-600">Senior Project Manager</p>
+                </div>
+              </div>
+              <p class="text-gray-700 italic">
+                "I've been with Elite Enterprises for over 5 years, and the
+                growth opportunities have been incredible. The company truly
+                invests in its people and provides challenging projects that
+                keep me engaged."
+              </p>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-16 h-16 rounded-full bg-gray-200 mr-4 overflow-hidden"
+                >
+                  <img
+                    src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20an%20Indian%20man%20in%20his%2040s%20with%20glasses%2C%20business%20casual%20attire%2C%20neutral%20background%2C%20high%20quality%20portrait&width=200&height=200&seq=employee2&orientation=squarish"
+                    alt="Rajiv Mehta"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold">Rajiv Mehta</h4>
+                  <p class="text-gray-600">Structural Engineer</p>
+                </div>
+              </div>
+              <p class="text-gray-700 italic">
+                "The collaborative environment at Elite Enterprises is what sets
+                it apart. I've had the opportunity to work with talented
+                professionals across disciplines, which has significantly
+                expanded my expertise."
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <!-- Company Info -->
+          <div>
+            <h3 class="font-['Pacifico'] text-2xl text-primary mb-4">
+              Elite Enterprises
+            </h3>
+            <p class="text-gray-400 mb-4">
+              Building the future with innovative engineering solutions since
+              2005.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-twitter-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="/"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/about"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/services"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/gallery"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/careers"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/contact"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Services -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Our Services</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="/services/structural-engineering"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Structural Engineering</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/services/civil-engineering"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Civil Engineering</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/services/project-management"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Project Management</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/services/construction-supervision"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Construction Supervision</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/services/environmental-consulting"
+                  class="text-gray-400 hover:text-primary transition-colors"
+                  >Environmental Consulting</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Contact Info -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <div class="w-5 h-5 flex items-center justify-center mr-2 mt-1">
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <span class="text-gray-400"
+                  >123 Engineering Plaza, Mumbai, Maharashtra 400001,
+                  India</span
+                >
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                  <i class="ri-phone-line"></i>
+                </div>
+                <span class="text-gray-400">+91 22 1234 5678</span>
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                  <i class="ri-mail-line"></i>
+                </div>
+                <span class="text-gray-400">careers@eliteenterprises.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">
+            © 2025 Elite Enterprises. All rights reserved.
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="/privacy-policy"
+              class="text-gray-400 text-sm hover:text-primary transition-colors"
+              >Privacy Policy</a
+            >
+            <a
+              href="/terms-of-service"
+              class="text-gray-400 text-sm hover:text-primary transition-colors"
+              >Terms of Service</a
+            >
+            <a
+              href="/sitemap"
+              class="text-gray-400 text-sm hover:text-primary transition-colors"
+              >Sitemap</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script id="mobile-menu-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+          // Toggle icon between menu and close
+          const icon = mobileMenuButton.querySelector("i");
+          if (icon.classList.contains("ri-menu-line")) {
+            icon.classList.remove("ri-menu-line");
+            icon.classList.add("ri-close-line");
+          } else {
+            icon.classList.remove("ri-close-line");
+            icon.classList.add("ri-menu-line");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
